@@ -76,7 +76,7 @@ int main() {
     printf("Nome: %s | id = %d | Vida: %d | Pontos: %d | posicao: %d\n\n", 
            catalogo[0].nome, catalogo[0].id, catalogo[0].vida, catalogo[0].pontuacao, catalogo[0].pos);
      
-    char buffer[20]; // Vetor pra auxiliar na leitura
+    char buffer[20]; // Vetor pra auxiliar na leitura 
     // Validar a nova capacidade informada
     do {
         printf("Digite a nova capacidade: ");
