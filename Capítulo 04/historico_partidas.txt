@@ -1,0 +1,6 @@
+101 Alex 1200
+102 Beatriz 2500
+103 Carlos 1850
+101 Alex 1200
+102 Beatriz 2500
+103 Carlos 1850
