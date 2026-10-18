@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
 
 // Estrutura para armazenar as métricas de execução
 typedef struct {

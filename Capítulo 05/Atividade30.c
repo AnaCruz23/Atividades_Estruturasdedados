@@ -329,5 +329,53 @@ int main() {
         (void)maior_res; // evita warning de variável não usada
     }
 
+    printf("======================================================================\n");
+    printf("     LABORATÓRIO DE ALGORITMOS: RECURSÃO vs ITERAÇÃO                  \n");
+    printf("======================================================================\n\n");
+
+    // ------------------------------------------------------------------------
+    // TESTE 1: Problema Numérico (Fatorial)
+    // ------------------------------------------------------------------------
+    int num = 5;
+    Contadores c_fat_it, c_fat_rec;
+    zerar_contadores(&c_fat_it);
+    zerar_contadores(&c_fat_rec);
+
+    long long res_fat_it = fatorial_iterativo(num, &c_fat_it);
+    long long res_fat_rec = fatorial_recursivo(num, &c_fat_rec);
+
+    printf(">>> DEMONSTRAÇÃO 1: Fatorial de N = %d <<<\n", num);
+    printf("  [Iterativo] Resultado: %lld | Comparações: %lld | Chamadas: 1\n", 
+           res_fat_it, c_fat_it.comparacoes);
+    printf("  [Recursivo] Resultado: %lld | Comparações: %lld | Chamadas: %lld (Profundidade)\n\n", 
+           res_fat_rec, c_fat_rec.comparacoes, c_fat_rec.chamadas_recursivas);
+
+    // ------------------------------------------------------------------------
+    // TESTE 2: Processamento de Vetor (Soma)
+    // ------------------------------------------------------------------------
+
+    Contadores c_soma_it, c_soma_rec;
+    zerar_contadores(&c_soma_it);
+    zerar_contadores(&c_soma_rec);
+
+    int res_soma_it = soma_vetor_iterativa(vetor, n, &c_soma_it);
+    int res_soma_rec = soma_vetor_recursiva(vetor, n, 0, &c_soma_rec);
+
+    printf(">>> DEMONSTRAÇÃO 2: Soma de Vetor (N = %d elementos) <<<\n", n);
+    printf("  [Iterativo] Resultado: %d | Acessos: %lld | Comparações: %lld | Chamadas: 1\n", 
+           res_soma_it, c_soma_it.acessos, c_soma_it.comparacoes);
+    printf("  [Recursivo] Resultado: %d | Acessos: %lld | Comparações: %lld | Chamadas: %lld (Profundidade)\n", 
+           res_soma_rec, c_soma_rec.acessos, c_soma_rec.comparacoes, c_soma_rec.chamadas_recursivas);
+
+    printf("\n======================================================================\n");
+    printf("ANÁLISE COMPARATIVA:\n");
+    printf("1. Correção dos Resultados: Ambas as abordagens geram os mesmos valores.\n");
+    printf("2. Custo de Memória:\n");
+    printf("   - Iterativo: Memória O(1) constante (usa apenas variáveis locais).\n");
+    printf("   - Recursivo: Memória O(n) na Pilha de Execução (Stack Frames).\n");
+    printf("3. Segurança do Limite: A verificação (indice >= tamanho) no caso-base\n");
+    printf("   garante que a função nunca acesse memória fora do vetor.\n");
+    printf("======================================================================\n");
+
     return 0;
 }

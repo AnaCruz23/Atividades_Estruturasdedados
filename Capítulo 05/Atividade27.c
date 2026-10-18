@@ -80,6 +80,8 @@ int buscar_pares_soma(int vetor[], int tamanho, int alvo, Contadores *c) {
     return total_pares;
 }
 
+
+
 int main() {
 
     int tamanhos[] = {10, 1000, 100000};
